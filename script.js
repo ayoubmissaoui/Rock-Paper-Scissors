@@ -58,7 +58,6 @@ function playerPlay() {
     do {
     choice = prompt("what are you picking ?");
     choice = choice.toLowerCase();
-    console.log (choice);
     }
     while (choice != "rock" && choice != "paper" && choice != "scissors" );
     return choice.toLowerCase()
