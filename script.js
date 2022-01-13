@@ -1,8 +1,8 @@
 //declarations
 let win = 0
-    , loss = 0
-    , tie = 0
-    , choice
+  , loss = 0
+  , tie = 0
+  , choice;
 
 //game
 function game(){
