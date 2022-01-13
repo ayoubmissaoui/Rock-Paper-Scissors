@@ -4,7 +4,7 @@ let win = 0
   , tie = 0
   , choice;
 
-//game
+//Runs a loop to play 5 rounds and compares your points in the end to decide whether you win or lose the game
 function game(){
     for (let i = 0 ; i < 5 ; i++ ){
     playRound(computerPlay(),playerPlay());
@@ -20,7 +20,7 @@ function game(){
     }
 }
 
-//playRound
+//Compares inputed parameter values and returns a result of wether you win, lose, or tie the round
 function playRound(computerPick,playerPick) {
     if (playerPick === computerPick) {
         tie += 1;
@@ -36,7 +36,7 @@ function playRound(computerPick,playerPick) {
     }
 }
 
-//computerPick
+//Ramdomly picks rock, paper, or scissors for the computer
 function computerPlay() {
     let random = Math.floor((Math.random() * 3) + 1 );
     if (random === 1){
@@ -53,7 +53,7 @@ function computerPlay() {
     }
 }
 
-//playerPick
+//Prompts the player to pick either rocks, paper, or scissors and puts their choice to lower case
 function playerPlay() { 
     do {
     choice = prompt("what are you picking ?");
@@ -63,7 +63,7 @@ function playerPlay() {
     return choice.toLowerCase()
 }
 
-//run the game
+//Run the game
 game();
 
 //@ayoubmissaoui
