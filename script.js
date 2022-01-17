@@ -64,6 +64,7 @@ function playRound(computerPick,playerPick) {
     }
 }
 
+// Play one round and display results
 function game() {
     if (win < 5 && loss < 5 ) {
         playRound(computerPlay(),choice);
@@ -73,6 +74,7 @@ function game() {
     }
 }
 
+// Checks if game ended and decalares winner
 function displayWinner() {
     if (win == 5 || loss == 5) {
         if (win > loss){
@@ -87,7 +89,7 @@ function displayWinner() {
     }   
 }
 
-//play
+// play one round
 buttons.forEach(button => {
     button.addEventListener('click', game)
 });

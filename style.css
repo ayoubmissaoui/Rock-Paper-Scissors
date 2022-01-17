@@ -17,8 +17,15 @@ body {
 .header {
     display: flex;
     justify-content: center;
-    flex-grow: 1;
     padding: 20px 0;
+    font-size: 32px;
+}
+
+.text {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    font-size: 30px;
 }
 
 .rps-container {
@@ -45,6 +52,7 @@ button {
     justify-content: center;
     gap: 20px;
     font-weight: 700;
+    font-size: 20px;
 }
 
 #result {
