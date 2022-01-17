@@ -6,5 +6,7 @@ After each round, you will be informed whether you lost that round or won it, an
 
 At the end of the game, you will be declared either a winner, or a loser.
 
+Try the game by [clicking on me](https://ayoubmissaoui.github.io/Rock-Paper-Scissors/)
+
 Enjoy !
 @ayoubmissaoui
