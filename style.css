@@ -53,6 +53,11 @@ button {
     justify-content: space-between;
 }
 
+#reset button {
+    border-radius: 15%;
+    padding: 4px 12px;
+}
+
 footer {
     display: flex;
     justify-content: center;
