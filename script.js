@@ -1,69 +1,95 @@
-//declarations
+// Declarations
 let win = 0
   , loss = 0
   , tie = 0
   , choice;
 
-//Runs a loop to play 5 rounds and compares your points in the end to decide whether you win or lose the game
-function game(){
-    for (let i = 0 ; i < 5 ; i++ ){
-    playRound(computerPlay(),playerPlay());
+// Elements querying
+const resultDiv = document.querySelector('#result');
+const resultDisplayDiv = document.querySelector('#result-display');
+const playerResult = document.querySelector('#player-result');
+const computerResult = document.querySelector('#computer-result');
+
+// Capture user pick
+const buttons = document.querySelectorAll('button');
+buttons.forEach( button => {
+    button.addEventListener('click', playerPlay)
+});
+function playerPlay(e) { 
+    if (this.id === "paper") {
+        return choice = "paper"
     }
-    if (win>loss){
-        return alert("Gratz you won !")
+    else if (this.id === "rock") {
+        return choice = "rock"
     }
-    else if (win == loss) {
-        return alert("You tied ! Won't hurt to try again, right?")
+    else if (this.id === "scissors") {
+        return choice = "scissors"
     }
-    else {
-        return alert("Better luck next time !")
-    }
+    else return 1;
 }
 
-//Compares inputed parameter values and returns a result of wether you win, lose, or tie the round
-function playRound(computerPick,playerPick) {
-    if (playerPick === computerPick) {
-        tie += 1;
-        return alert(`You tied, the computer picked ${playerPick} aswell.`)
-    }
-    else if (( playerPick === "rock" & computerPick === "scissors" )||( playerPick === "scissors" & computerPick === "paper" )||( playerPick === "paper" && computerPick === "rock" )) {
-        win += 1;
-        return alert(`You win, ${playerPick} beats ${computerPick}.`)
-    }
-    else {
-        loss += 1;
-        return alert(`You lose, ${computerPick} beats ${playerPick}.`)
-    }
-}
-
-//Ramdomly picks rock, paper, or scissors for the computer
+// Computer pick
 function computerPlay() {
     let random = Math.floor((Math.random() * 3) + 1 );
     if (random === 1){
-        return "rock"
+        return "rock";
     }
     else if (random === 2) {
-        return "paper"
+        return "paper";
     }
     else if (random === 3) {
-        return "scissors"
+        return "scissors";
     }
     else {
-        return "Something isn't right"
+        return "Something isn't right";
     }
 }
 
-//Prompts the player to pick either rocks, paper, or scissors and puts their choice to lower case
-function playerPlay() { 
-    do {
-    choice = prompt("what are you picking ?");
-    choice = choice.toLowerCase();
+// Compare computer and player picks and display appropriate message
+function playRound(computerPick,playerPick) {
+    if (playerPick === computerPick) {
+        tie += 1;
+        return resultDisplayDiv.textContent=`You tied, the computer picked ${playerPick} aswell.`;
     }
-    while (choice != "rock" && choice != "paper" && choice != "scissors" );
-    return choice.toLowerCase()
+
+    else if (( playerPick === "rock" & computerPick === "scissors" )||( playerPick === "scissors" &
+     computerPick === "paper" )||( playerPick === "paper" && computerPick === "rock" )) {
+        win += 1;
+        return resultDisplayDiv.textContent=`You win, ${playerPick} beats ${computerPick}.`;
+    }
+
+    else {
+        loss += 1;
+        return resultDisplayDiv.textContent=`You lose, ${computerPick} beats ${playerPick}.`;
+    }
 }
 
-//Run the game
-game();
+function game() {
+    if (win < 5 && loss < 5 ) {
+        playRound(computerPlay(),choice);
+        playerResult.textContent = `You : ${win}`;
+        computerResult.textContent =`Computer : ${loss}`;
+        displayWinner();
+    }
+}
+
+function displayWinner() {
+    if (win == 5 || loss == 5) {
+        if (win > loss){
+            return resultDisplayDiv.textContent=`Congratulations, you were first to reach 5, you win!`;
+        }
+        else if (win < loss) {
+            return resultDisplayDiv.textContent=`Better luck next time, computer wins!`;
+        }
+    }
+    else if (win < 5 && loss < 5) {
+        return;
+    }   
+}
+
+//play
+buttons.forEach(button => {
+    button.addEventListener('click', game)
+});
 
 //@ayoubmissaoui

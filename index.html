@@ -3,9 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Rock Paper Scissors</title>
-    <script src="./script.js"></script>
+    <script src="./script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+        <div class="header"><h1>Rock Paper Scissors</h1></div>
+        <div class="game-container">
+        <div class="rps-container">
+            <div class="buttons-container">
+                <button id="rock"><img src="./media/rockEmojie.png" alt=""></button>
+                <button id="paper"><img src="./media/paperEmojie.png" alt=""></button>
+                <button id="scissors"><img src="./media/scissorsEmojie.png" alt=""></button>
+            </div>
+            <div class="results-container">
+                <div id="result">
+                    <div id="player-result"></div>
+                    <div id="computer-result"></div>
+                </div>
+                <div id="result-display"></div>
+            </div>
+        </div>
+    </div>
+    <footer>@ayoubmissaoui</footer>
 </body>
 </html>

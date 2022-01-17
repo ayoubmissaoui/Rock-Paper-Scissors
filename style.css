@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@400;700&family=Inter:wght@400;700&family=Sora:wght@400;700&display=swap');
+
+body {
+    background-color: #E8F1F2;
+    font-family: 'Epilogue','Inter','Sora',sans-serif;
+    margin: 0;
+}
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 85vh;
+    justify-content: flex-start;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    padding: 20px 0;
+}
+
+.rps-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    border-radius: 5%;
+}
+
+.buttons-container {
+    display: flex;
+    gap: 25px;
+    padding: 50px 0;
+}
+
+.results-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    font-weight: 700;
+}
+
+#result {
+    display: flex;
+    width: 300px;
+    justify-content: space-between;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+}
