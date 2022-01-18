@@ -41,6 +41,17 @@ button {
     border-radius: 5%;
 }
 
+button:hover {
+    background-color: #EEC8E0;
+    transition-duration: 0.3s;
+}
+
+button:active {
+  background-color: #EEC8E0;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
 .buttons-container {
     display: flex;
     gap: 25px;
